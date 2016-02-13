@@ -5,7 +5,7 @@ defmodule FastCompare.Mixfile do
         [app: :fast_compare,
         version: "0.0.1",
         compilers: [:make, :elixir, :app],
-        
+        aliases: aliases
         ]
     end
 
@@ -27,7 +27,7 @@ end
 defmodule Mix.Tasks.Clean.Make do
 
     def run(_) do
-        {result, _error_code} = System.cmd("make", ['clean'], stderr_to_stdout: true)
+        {result, _error_code} = System.cmd("make", ["clean"], stderr_to_stdout: true)
         Mix.shell.info result
         
         :ok
